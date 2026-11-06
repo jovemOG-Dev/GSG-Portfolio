@@ -1,0 +1,20 @@
+/* Tema escuro e botão de alternância */
+/* Tema escuro: só as cores da página mudam; painéis escuros e blocos coloridos mantêm as cores originais */
+html{color-scheme:light}
+body{transition:background-color .3s,color .3s}
+html[data-theme=dark]{color-scheme:dark;--paper:#141517;--surface:#1F2023;--dark:#EDEAE3;--muted:#A8A59E;--line:#323337;--white:#1A1B1E;--blue:#8FA2FF}
+html[data-theme=dark] :is(.sidebar,.topbar,.hero,.dark,.contact,.more-card,.jt,.featured,.about-statement,.about-focus,.btn-coral,.avatar,.bubbles i,.conn-avatar,.conn-tags .rel){--paper:#F2EFE8;--surface:#E8E3D9;--dark:#222326;--muted:#5E5C57;--line:#D2CCC1;--white:#fff;--blue:#465ED6}
+html[data-theme=dark] ::selection{color:#222326}
+html[data-theme=dark] .about-main p,html[data-theme=dark] .nc p.d{color:#C9C6BF}
+html[data-theme=dark] .node.exp .kind,html[data-theme=dark] .node.exp .roles .when{color:#FF9279}
+html[data-theme=dark] .change-tags span{border-color:#4A4B50}
+html[data-theme=dark] .card:hover,html[data-theme=dark] .card:focus-within{border-color:#8A877F}
+.theme-btn{flex:none;display:inline-grid;place-items:center;width:2.25rem;height:2.25rem;border:1.5px solid #55575F;border-radius:50%;background:none;color:var(--paper);cursor:pointer;transition:background-color .2s,border-color .2s,transform .3s}
+.theme-btn:hover{border-color:var(--coral);transform:rotate(18deg)}
+.theme-btn svg{width:1.1rem;height:1.1rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.theme-btn .i-sun{display:none}
+html[data-theme=dark] .theme-btn .i-sun{display:block}
+html[data-theme=dark] .theme-btn .i-moon{display:none}
+.logo-row{display:flex;align-items:center;justify-content:space-between;gap:.75rem}
+html[data-theme=dark] .conn-card[data-c="2"] .conn-avatar{background:#3A3B40;color:#F2EFE8}
+.bar-actions{display:flex;align-items:center;gap:.6rem}

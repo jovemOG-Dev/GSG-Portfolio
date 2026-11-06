@@ -1,0 +1,83 @@
+/* Trajetória: mapa editorial com percurso orgânico (título segue o padrão .section .title das demais páginas) */
+#trajetoria.journey{position:relative;isolation:isolate;overflow:hidden;background:var(--paper)}
+#trajetoria.journey::after{content:"";position:absolute;z-index:-1;width:17rem;height:17rem;left:-11rem;bottom:9rem;background:var(--coral);opacity:.09;border-radius:62% 38% 33% 67% / 56% 43% 57% 44%;transform:rotate(32deg);pointer-events:none}
+.journey-intro{position:relative;margin:0 0 clamp(3rem,6vw,5.5rem)}
+.journey-headline{padding:0 0 2.5rem}
+.journey-deck{max-width:38rem;color:var(--muted);font-size:clamp(1rem,1.7vw,1.2rem);line-height:1.65;margin:0}
+.journey-indexline{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;border-top:1px solid var(--line);padding-top:1rem;color:var(--coral);font:700 .75rem var(--display);letter-spacing:.06em}
+.journey-indexline span{display:flex;gap:.6rem;align-items:baseline}.journey-indexline b{font:500 .72rem var(--body);letter-spacing:0;color:var(--muted)}
+.journey-map{--p:0;position:relative;isolation:isolate;max-width:68rem;margin:0 auto}
+.spine.journey-route{position:relative;display:grid;grid-template-columns:1fr;gap:1.2rem;margin:0;padding:0;list-style:none;isolation:isolate}
+.journey-ribbon{position:absolute;z-index:-1;left:50%;top:0;bottom:0;width:clamp(8rem,15vw,12rem);height:100%;transform:translateX(-50%);overflow:visible;pointer-events:none}
+.journey-ribbon path{fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ribbon-track{stroke:var(--line);stroke-width:2.5;stroke-dasharray:2 10;opacity:.9}
+.ribbon-progress{stroke:url(#journeyGradient);stroke-width:4;stroke-dasharray:1000;stroke-dashoffset:calc(1000 * (1 - var(--p)));transition:stroke-dashoffset .25s ease-out}
+.node{position:relative;display:grid;grid-template-columns:1fr 1fr;align-items:center;min-height:15.5rem;padding:0;isolation:isolate}
+.node:nth-child(odd) .journey-card{grid-column:1;margin-right:clamp(2.8rem,7vw,6.3rem);transform:rotate(-1.1deg);border-radius:2.2rem 1.2rem 2.7rem 1.1rem}
+.node:nth-child(even) .journey-card{grid-column:2;margin-left:clamp(2.8rem,7vw,6.3rem);transform:rotate(1.05deg);border-radius:1.2rem 2.5rem 1.1rem 2.6rem}
+.journey-card{position:relative;overflow:hidden;min-height:12.5rem;padding:clamp(1.35rem,2.8vw,2rem);background:var(--surface);border:1px solid var(--line);box-shadow:0 12px 32px rgba(34,35,38,.055);transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-radius .35s}
+.journey-card:hover,.node:focus-within .journey-card{transform:translateY(-5px) rotate(0)!important;box-shadow:0 20px 42px rgba(34,35,38,.12);border-radius:1.4rem}
+.journey-card::before{content:"";position:absolute;right:-4.5rem;top:-5.5rem;width:12rem;height:12rem;border:1px solid color-mix(in srgb,var(--blue) 25%,transparent);border-radius:46% 54% 58% 42% / 49% 39% 61% 51%;transform:rotate(28deg);pointer-events:none}
+.node.exp .journey-card::before{border-color:color-mix(in srgb,var(--coral) 32%,transparent);transform:rotate(-22deg)}
+.journey-card-top{position:relative;display:flex;align-items:center;gap:.55rem;flex-wrap:wrap;min-height:2rem;margin-bottom:.65rem}
+.kind{display:inline-flex;align-items:center;gap:.4rem;font:700 .68rem var(--display);letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+.kind::before{content:"";display:inline-block;width:.48rem;height:.48rem;border-radius:50% 50% 50% 10%;background:currentColor;transform:rotate(-35deg)}
+.node.exp .kind{color:#C4452A}
+.live{display:inline-block;padding:.16rem .62rem;border:1px solid color-mix(in srgb,var(--blue) 45%,var(--line));border-radius:99px;font-size:.68rem;font-weight:700;color:var(--muted)}
+.node .yr{margin-left:auto;font:700 clamp(1.9rem,3.6vw,3.1rem)/.9 var(--display);letter-spacing:-.075em;color:transparent;-webkit-text-stroke:1.25px var(--dark);padding:0}
+.journey-eyebrow{display:block;margin:.6rem 0 .38rem;color:var(--muted);font:700 .62rem var(--display);letter-spacing:.18em}
+.journey-card h3{position:relative;max-width:22ch;font-size:clamp(1.35rem,2.4vw,1.85rem);line-height:1.08;letter-spacing:-.045em;margin:0 0 .6rem}
+.journey-card .where{position:relative;color:var(--muted);font-size:.84rem;font-weight:700;line-height:1.55}
+.journey-card .where span{color:var(--coral);padding:0 .12rem}
+.journey-card p.d{position:relative;max-width:38rem;margin-top:.65rem;color:var(--muted);font-size:.94rem;line-height:1.55}
+.cred{position:relative;display:inline-flex;align-items:center;gap:.35rem;margin-top:.8rem;font-weight:700;font-size:.88rem;color:var(--blue);text-underline-offset:4px}
+.cred span{transition:transform .2s}.cred:hover span{transform:translate(3px,-3px)}
+.journey-card-mark{position:absolute;right:1.25rem;bottom:.6rem;color:var(--dark);opacity:.075;font:700 4.5rem/.8 var(--display);letter-spacing:-.1em;pointer-events:none}
+.traj-pin{position:absolute;left:50%;top:50%;z-index:2;display:grid;place-items:center;width:3.1rem;height:3.1rem;border:1px solid var(--line);border-radius:43% 57% 52% 48% / 54% 39% 61% 46%;background:var(--paper);color:var(--blue);box-shadow:0 0 0 8px var(--paper);transform:translate(-50%,-50%) rotate(-12deg);transition:background .3s,color .3s,border-color .3s}
+.traj-pin b{font:700 .72rem var(--display);letter-spacing:.02em;transform:rotate(12deg)}
+.node.exp .traj-pin{color:#C4452A;border-radius:50% 42% 50% 42%}
+.node.on .traj-pin{background:var(--blue);border-color:var(--blue);color:#fff}
+.node.exp.on .traj-pin{background:var(--coral);border-color:var(--coral);color:var(--dark)}
+.node:nth-child(odd) .journey-card::after,.node:nth-child(even) .journey-card::after{content:"";position:absolute;top:50%;width:clamp(2rem,5vw,4.5rem);border-top:1px dashed var(--line)}
+.node:nth-child(odd) .journey-card::after{right:calc(clamp(2.8rem,7vw,6.3rem) * -1)}
+.node:nth-child(even) .journey-card::after{left:calc(clamp(2.8rem,7vw,6.3rem) * -1)}
+.journey-outro{position:relative;display:flex;align-items:center;gap:1.15rem;max-width:68rem;margin:2.8rem auto 0;padding:1.2rem 1.5rem;background:var(--dark);color:var(--paper);border-radius:1.2rem 3rem 1.1rem 2.5rem;transform:rotate(-.35deg)}
+.journey-outro-mark{display:grid;place-items:center;width:3rem;height:3rem;flex:none;border-radius:44% 56% 52% 48%;background:var(--coral);color:var(--dark);font-size:1.5rem;transform:rotate(10deg)}
+.journey-outro-label{font:700 .62rem var(--display);letter-spacing:.16em;color:var(--coral)}
+.journey-outro p{font:500 clamp(1rem,2vw,1.2rem) var(--display);letter-spacing:-.02em;margin-top:.1rem}
+.journey-outro-note{margin-left:auto;align-self:center;color:#A6A39B;font:700 .64rem var(--display);letter-spacing:.16em;white-space:nowrap}
+html[data-theme=dark] #trajetoria.journey{--journey-shadow:rgba(0,0,0,.18)}
+html[data-theme=dark] .journey-card{box-shadow:0 14px 34px rgba(0,0,0,.16)}
+html[data-theme=dark] .journey-card p.d{color:#C9C6BF}
+html[data-theme=dark] .node.exp .kind{color:#FF9279}
+html[data-theme=dark] .node.exp .traj-pin{color:#FF9279}
+html[data-theme=dark] .node.exp.on .traj-pin{color:var(--dark)}
+@media(max-width:760px){
+  .journey-headline{padding:0 0 2rem}
+  .journey-indexline{grid-template-columns:repeat(2,1fr);row-gap:.7rem}
+  .journey-indexline span{font-size:.7rem}
+  .spine.journey-route{gap:1rem;padding-left:0}
+  .journey-ribbon{left:1.55rem;width:4.7rem;transform:none}
+  .node{display:block;min-height:0;padding:1.2rem 0 1.2rem 4.1rem}
+  .node:nth-child(odd) .journey-card,.node:nth-child(even) .journey-card{margin:0;transform:rotate(-.55deg);border-radius:1.5rem 1rem 1.8rem 1rem}
+  .node:nth-child(even) .journey-card{transform:rotate(.55deg)}
+  .traj-pin{left:1.55rem;top:2.1rem;width:2.55rem;height:2.55rem;transform:translate(-50%,0) rotate(-12deg);box-shadow:0 0 0 5px var(--paper)}
+  .traj-pin b{font-size:.65rem}
+  .node:nth-child(odd) .journey-card::after,.node:nth-child(even) .journey-card::after{left:-1.8rem;right:auto;width:1.8rem;top:2.5rem}
+  .journey-card{min-height:0;padding:1.25rem 1.25rem 1.4rem}
+  .journey-card h3{font-size:1.4rem}
+  .node .yr{font-size:2rem}
+  .journey-outro{margin-top:1.5rem;padding:1rem;gap:.8rem;border-radius:1rem 2rem 1rem 1.8rem}
+  .journey-outro-mark{width:2.55rem;height:2.55rem}
+  .journey-outro-note{font-size:.55rem}
+}
+@media(max-width:420px){
+  .journey-deck{font-size:.92rem}
+  .journey-indexline{gap:.5rem}
+  .journey-indexline span{display:block;font-size:.68rem}
+  .journey-indexline b{display:block;margin-top:.15rem;font-size:.64rem}
+  .journey-outro-note{display:none}
+  .journey-card-top{gap:.4rem}
+  .node .yr{font-size:1.75rem}
+}
+@media(prefers-reduced-motion:reduce){.ribbon-progress{transition:none}}

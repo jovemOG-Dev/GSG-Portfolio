@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gabriel Silva Gomes · Desenvolvedor Full Stack em formação</title>
+<meta name="description" content="Portfólio de Gabriel Silva Gomes: apresentação, contatos, projetos e trajetória como desenvolvedor Full Stack em formação.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#222326">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<!-- CSS: a ordem importa (cascata). tema, responsivo e movimento ficam por último. -->
+<link rel="stylesheet" href="assets/css/core/base.css">
+<link rel="stylesheet" href="assets/css/layout/layout.css">
+<link rel="stylesheet" href="assets/css/pages/hero.css">
+<link rel="stylesheet" href="assets/css/pages/home.css">
+<link rel="stylesheet" href="assets/css/pages/conexoes.css">
+<link rel="stylesheet" href="assets/css/pages/paginas.css">
+<link rel="stylesheet" href="assets/css/layout/contato.css">
+<link rel="stylesheet" href="assets/css/pages/trajetoria.css">
+<link rel="stylesheet" href="assets/css/core/responsivo.css">
+<link rel="stylesheet" href="assets/css/core/tema.css">
+<link rel="stylesheet" href="assets/css/core/movimento.css">
+<script src="assets/js/core/theme-init.js"></script>
+</head>
+<body>
+
+<!-- @include layout/sidebar -->
+
+<!-- @include layout/topbar -->
+
+<div class="main" id="topo">
+<main id="home">
+
+  <!-- @include home/hero -->
+
+  <!-- @include home/sobre-mim -->
+
+  <!-- @include home/changelog -->
+
+</main>
+
+<main id="pages" hidden>
+
+  <!-- @include pages/blog -->
+
+  <!-- @include pages/projetos -->
+
+  <!-- @include pages/tecnologias -->
+
+  <!-- @include pages/trajetoria -->
+
+</main>
+
+<main id="post-view" hidden>
+  <div class="wrap">
+
+    <!-- @include posts/senacos-town-git-city -->
+
+    <!-- @include posts/convencao-para-simulados -->
+
+    <!-- @include subpaginas/conexoes -->
+
+    <!-- @include subpaginas/simulados -->
+
+  </div>
+</main>
+
+<!-- @include layout/contato -->
+</div>
+
+<!-- JS: ordem importa. O roteador (router.js) deve ser o último. -->
+<script src="assets/js/components/menu-mobile.js"></script>
+<script src="assets/js/components/collapsible.js"></script>
+<script src="assets/js/components/terminal.js"></script>
+<script src="assets/js/components/vinyl.js"></script>
+<script src="assets/js/components/reveal.js"></script>
+<script src="assets/js/components/trajetoria.js"></script>
+<script src="assets/js/components/tema.js"></script>
+<script src="assets/js/pages/conexoes.js"></script>
+<script src="assets/js/router.js"></script>
+</body>
+</html>

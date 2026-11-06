@@ -1,0 +1,9 @@
+# Sistema e editores
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Originais pesados de fotos (guarde só as versões otimizadas em assets/img)
+*.psd
+*.raw
+originais/

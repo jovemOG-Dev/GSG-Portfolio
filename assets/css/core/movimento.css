@@ -1,0 +1,24 @@
+/* Transições entre páginas, revelação ao rolar, reduced-motion e impressão */
+/* Transições: saída e entrada de página, escalonamento dos cards e revelação ao rolar */
+@keyframes viewIn{from{opacity:0;transform:translateY(14px)}}
+@keyframes viewOut{to{opacity:0;transform:translateY(-8px)}}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}}
+@keyframes drawerIn{from{opacity:0;transform:translateY(-8px)}}
+.is-entering{animation:viewIn .38s cubic-bezier(.2,.7,.2,1) backwards}
+.is-leaving{animation:viewOut .16s ease-in forwards;pointer-events:none}
+.is-entering .jump li,.is-entering .grid>*,.is-entering .stack>*,.is-entering .timeline>*,.is-entering .node,.is-entering .entry{animation:rise .5s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:calc(var(--i,0)*55ms + 80ms)}
+html.js .reveal{opacity:0;transform:translateY(18px);transition:opacity .6s cubic-bezier(.2,.7,.2,1),transform .6s cubic-bezier(.2,.7,.2,1)}
+html.js .reveal.in{opacity:1;transform:none}
+html.js .about-aside>.reveal:nth-child(2){transition-delay:.12s}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}html.js .reveal{opacity:1;transform:none}}
+@media print{
+  .sidebar,.topbar,.actions{display:none!important}
+  .main{margin:0;padding:0}
+  .hero,.dark,.contact{background:#fff;color:#000}
+  .hero h1 .out{-webkit-text-stroke:0;color:#000}
+  .featured{background:#fff;border:2px solid #000}
+  .box,.tile,.home-card,.change-card{background:#fff;color:#000;border-color:#999}.box h3,.box p,.tile h2,.tile p,.lead{color:#000}
+  .jump .jt{background:#fff!important;color:#000!important;border-color:#999!important}.jump .jt *{color:#000!important}
+  .contact::before{display:none}.contact *{color:#000!important}
+  .portrait-img{border-color:#999}
+}

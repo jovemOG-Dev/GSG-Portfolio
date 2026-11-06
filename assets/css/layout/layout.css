@@ -1,0 +1,78 @@
+/* Navegação lateral (desktop) e barra superior (mobile) */
+/* Navegação lateral (desktop) */
+.sidebar{position:fixed;inset:0 auto 0 0;width:var(--side);height:100dvh;overflow-y:auto;background:var(--dark);color:var(--paper);padding:1.75rem 1.5rem;display:flex;flex-direction:column;z-index:100}
+.logo{display:inline-block;font-family:var(--display);font-weight:700;font-size:2.4rem;line-height:1;letter-spacing:-.05em;text-decoration:none}
+.logo span,.topbar .brand span{color:var(--coral)}
+.logo .o,.topbar .brand .o{color:transparent;-webkit-text-stroke:1.5px var(--paper);letter-spacing:0;margin:0 .07em 0 .05em}
+.sidebar .who{margin-top:.75rem;font-size:.95rem;line-height:1.45;color:#9C9DA1}
+.sidebar .who strong{display:block;color:var(--paper);font-weight:500}
+.sidebar nav{margin:0}
+.side-top{flex:1 1 auto;min-height:0;display:flex;flex-direction:column}
+.side-deco{margin:.6rem 0 0;width:100%;flex:1 1 auto;min-height:10.75rem;display:flex;flex-direction:column;container-type:size}
+.term{font:500 .8rem/1.65 ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;background:#18191c;border:1px solid #3A3B3F;border-radius:8px;overflow:hidden;color:#BDBDC0}
+.term-bar{display:flex;align-items:center;gap:5px;padding:.55rem .75rem;border-bottom:1px solid #2E2F33}
+.term-bar i{width:8px;height:8px;border-radius:50%;background:#4A4B50}
+.term-bar i:first-child{background:var(--coral)}
+.term-bar span{margin-left:.35rem;font-size:.66rem;color:#7B7C80;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.term-body{padding:.7rem .8rem .8rem;flex:1 1 auto;min-height:0;overflow:hidden}
+.term .t-x,.term .t-y,.term .t-z{display:none}
+@container (min-height:13.1rem){.term .t-x{display:block}}
+@container (min-height:18.3rem){.term .t-y{display:block}}
+@container (min-height:23.5rem){.term .t-z{display:block}}
+.term-body p{margin:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.t-p{color:var(--coral);font-weight:700}
+.t-c{color:var(--paper)}
+.t-c.type{display:inline-block;vertical-align:top;overflow:hidden;white-space:nowrap;animation:termtype .7s steps(6) .5s both}
+.t-o{color:#9C9DA1}
+.term .cur{display:inline-block;width:.55em;height:1.05em;vertical-align:-.2em;background:var(--coral);animation:termblink 1.1s steps(1) infinite}
+.term .a{animation:termin .35s ease var(--d,0s) both}
+.term.term-done .a,.term.term-done .t-c.type{animation:none}
+.t-name{color:var(--paper);font-weight:700}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+@keyframes termtype{from{width:0}to{width:6ch}}
+@keyframes termin{from{opacity:0;transform:translateY(3px)}}
+@keyframes termblink{50%{opacity:0}}
+@media(max-height:700px){.term-bar{display:none}.term-body{padding:.45rem .7rem}
+  .term .t-x,.term .t-y,.term .t-z{display:none}
+  @container (min-height:10.3rem){.term .t-x{display:block}}
+  @container (min-height:15.5rem){.term .t-y{display:block}}
+  @container (min-height:20.7rem){.term .t-z{display:block}}}
+.menu{list-style:none;margin:0;padding:.9rem 0;position:relative}
+.menu::before{content:"";position:absolute;left:5px;top:1.4rem;bottom:1.4rem;width:2px;background:#45464A}
+.menu a{position:relative;display:block;padding:clamp(.6rem,1.15vh,.85rem) 0 clamp(.6rem,1.15vh,.85rem) 1.9rem;font-size:1rem;color:#BDBDC0;text-decoration:none;transition:color .15s}
+.menu a::before{content:"";position:absolute;left:0;top:50%;width:12px;height:12px;margin-top:-6px;border-radius:50%;background:var(--dark);border:2px solid #6B6C70;transition:background .15s,border-color .15s,box-shadow .15s}
+.menu a:hover{color:var(--white)}
+.menu a:hover::before{border-color:var(--coral)}
+.menu a.active{color:var(--white);font-weight:700}
+.menu a.active::before{background:var(--coral);border-color:var(--coral);box-shadow:0 0 0 4px rgba(255,128,96,.25)}
+.menu:not(.menu-pages){padding-top:.5rem;padding-bottom:.5rem}
+.menu:not(.menu-pages)::before{top:1rem;bottom:.95rem}
+.menu-pages{margin-top:.1rem;padding-top:.5rem;border-top:1px solid #3A3B3F}
+.menu-pages::before{top:.95rem}
+.menu-pages::before{width:0;background:none;border-left:2px dashed #45464A}
+.menu-pages a::before{border-radius:3px;transform:rotate(45deg)}
+.side-foot{border-top:1px solid #3A3B3F;padding-top:1.25rem}
+@media(max-height:700px){.sidebar{padding:1.25rem 1.5rem}.logo{font-size:2rem}.sidebar .who{margin-top:.4rem;font-size:.9rem}.menu{padding:.5rem 0}.menu::before{top:.9rem;bottom:.9rem}.menu a{padding:.4rem 0 .4rem 1.9rem}.side-foot{padding-top:.9rem}.status{margin-top:.6rem}}
+.status{display:flex;align-items:center;justify-content:center;gap:.5rem;font-size:.9rem;color:#D6D6D6;margin-top:.9rem}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--coral);flex:none}
+.status{text-decoration:none;white-space:nowrap;transition:color .15s}
+.status:hover{color:var(--white)}
+.status span{color:var(--coral);transition:transform .15s}
+.status:hover span{transform:translateY(2px)}
+.side-foot .status{margin-top:0;justify-content:flex-start;gap:.45rem;font-size:.85rem}
+.status-hero{display:none}
+
+/* Barra superior fixa (mobile) */
+.topbar{display:none;position:fixed;top:0;left:0;right:0;height:var(--bar);background:rgba(34,35,38,.96);backdrop-filter:blur(10px);color:var(--paper);align-items:center;justify-content:space-between;padding:0 1.25rem;z-index:200;border-bottom:1px solid #46474B}
+.topbar .brand{font-family:var(--display);font-weight:700;font-size:1.6rem;letter-spacing:-.04em;text-decoration:none}
+.toggle{background:none;border:2px solid #77787C;color:var(--paper);border-radius:8px;padding:.45rem .9rem;font:700 .9rem var(--body);cursor:pointer}
+.drawer{display:grid;grid-template-rows:0fr;visibility:hidden;position:absolute;top:100%;left:0;right:0;background:var(--dark);transition:grid-template-rows .3s cubic-bezier(.2,.7,.2,1),visibility 0s .3s}
+.drawer.open{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .3s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.drawer-in{min-height:0;overflow:hidden}
+.drawer-in>div{display:grid;padding:.75rem 1.25rem 1.5rem;border-bottom:1px solid #46474B}
+.drawer-sep{display:block;height:1px;margin:.5rem 0 .25rem;background:#3A3B3F}
+.drawer a{padding:.85rem .25rem;text-decoration:none;border-bottom:1px solid #3A3B3F;font-size:1.05rem}
+.drawer a.active{color:var(--coral);font-weight:700}
+
+.main{margin-left:var(--side)}
+.wrap{width:min(100% - 6rem,84rem);margin:0 auto}

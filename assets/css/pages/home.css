@@ -1,0 +1,119 @@
+/* Seções da home: Sobre mim, cards, disco, livro, bolinhas e registro de mudanças */
+/* Seções adicionais da home */
+.home-section{padding:5.5rem 0;border-bottom:1px solid var(--line);scroll-margin-top:24px}
+.home-section-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:2rem}
+.eyebrow{font:700 .78rem var(--display);letter-spacing:.14em;color:var(--muted)}
+.eyebrow span{color:var(--blue)}
+.head-note{font-size:.88rem;color:var(--muted)}
+.about-section{padding-top:3.5rem}
+.about-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(15rem,.8fr);gap:1rem}
+.about-aside{display:grid;grid-template-rows:auto minmax(0,1fr);gap:1rem}
+.home-card{border-radius:20px;padding:clamp(1.5rem,3.2vw,2.6rem)}
+.about-main{background:var(--surface);display:flex;flex-direction:column;align-items:flex-start}
+.about-main-top{display:flex;align-items:center;justify-content:space-between;width:100%;margin-bottom:2.4rem}
+.card-index{font:700 .75rem var(--display);letter-spacing:.14em;color:var(--muted)}
+.card-mark{font-size:1.5rem;color:var(--blue)}
+.about-main h2{max-width:46rem;font-size:clamp(2rem,4.3vw,3.45rem);letter-spacing:-.045em;margin-bottom:1.5rem}
+.about-main h2 em{font-style:normal;color:var(--blue)}
+.about-main p{max-width:48rem;color:#55534F;margin-bottom:1rem}
+.text-link{display:inline-flex;align-items:center;gap:.65rem;margin-top:auto;padding-top:1rem;color:var(--blue);font-weight:700;text-decoration:none}
+.text-link span{transition:transform .2s}
+.text-link:hover span{transform:translate(3px,-3px)}
+.about-more{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr) minmax(0,1fr);gap:1rem;margin-top:1rem}
+.more-card{position:relative;overflow:hidden;min-height:23rem;background:var(--dark);color:var(--paper);display:flex;flex-direction:column}
+.more-card .card-index{color:#B6B6BA}
+.more-card h3{font-size:1.25rem;margin:.9rem 0 .5rem}
+.more-card p{color:#C9C9CC;font-size:.98rem}
+.more-card p strong{color:var(--white)}
+.vinyl{position:absolute;left:50%;bottom:-7.5rem;width:15rem;height:15rem;margin-left:-7.5rem;border-radius:50%;background:radial-gradient(circle,var(--coral) 0 16%,#15161a 17% 100%);box-shadow:0 0 0 1.2rem #1d1e22,0 0 0 2.4rem #191a1e;animation:spin 14s linear infinite}
+.vinyl::after{content:"";position:absolute;inset:18%;border-radius:50%;border:1px solid #2c2d33;box-shadow:0 0 0 .8rem #1b1c20 inset}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rings{position:absolute;left:0;right:0;top:4.25rem;height:8rem;display:flex;justify-content:center;gap:0;pointer-events:none}
+.rings i{flex:none;width:8rem;height:8rem;margin:0 -.5rem;border-radius:50%;border:6px solid #3c3d42}
+.avatar{position:absolute;left:50%;top:5.75rem;margin-left:-2.5rem;width:5rem;height:5rem;border-radius:50%;display:grid;place-items:center;background:var(--coral);color:var(--dark);border:4px solid var(--paper);font:700 1.35rem var(--display);letter-spacing:-.04em}
+.more-connect{align-items:center;text-align:center}
+.more-connect .txt{margin-top:auto;padding-top:.5rem}
+.book{position:absolute;right:-1.5rem;bottom:-2.5rem;left:2.25rem;top:6.5rem;border-radius:8px 0 0 0;background:linear-gradient(135deg,#1a1a1f,#2a1517 55%,#b92f2f);padding:1.1rem;display:flex;flex-direction:column;justify-content:flex-start;gap:.3rem;box-shadow:-8px 8px 24px rgba(0,0,0,.45)}
+.book b{font:700 1.6rem/1.05 var(--display);letter-spacing:-.03em;color:var(--paper);overflow-wrap:anywhere}
+.book span{font-size:.82rem;color:#E6C9C9}
+.about-statement{position:relative;overflow:hidden;background:var(--coral);display:flex;flex-direction:column;justify-content:flex-end;min-height:210px}
+.statement-symbol{position:absolute;top:.7rem;right:1.5rem;font:700 8rem/.8 Georgia,serif;color:rgba(34,35,38,.14)}
+.about-statement p{position:relative;max-width:100%;font:700 clamp(1.15rem,2vw,1.5rem)/1.2 var(--display);letter-spacing:-.03em}
+@supports(container-type:inline-size){.about-statement{container-type:inline-size}.about-statement p{font-size:clamp(1.3rem,10.5cqi,2.8rem)}.statement-symbol{font-size:clamp(6rem,30cqi,12rem)}}
+
+.statement-caption{position:relative;margin-top:1.25rem;font:700 .68rem var(--display);letter-spacing:.14em}
+
+.changelog-section{padding-bottom:6.5rem}
+.changelog-layout{display:grid;grid-template-columns:minmax(13rem,.7fr) minmax(0,1.5fr);gap:3rem;align-items:start}
+.changelog-heading h2{font-size:clamp(2.5rem,5vw,4rem);letter-spacing:-.05em;margin-bottom:.8rem}
+.changelog-heading h2 span{color:var(--coral)}
+.changelog-heading p{max-width:18rem;color:var(--muted)}
+.changelog-stamp{display:inline-block;margin-top:2.4rem;border:1px solid var(--line);border-radius:99px;padding:.45rem .8rem;font:700 .68rem var(--display);letter-spacing:.12em;color:var(--muted)}
+.change-list{list-style:none;display:grid;gap:1rem}
+.change-timeline{position:relative}
+.change-older{padding-top:1rem}
+.change-timeline::before{content:"";position:absolute;left:7.2rem;top:.5rem;bottom:.5rem;width:1px;background:var(--line)}
+.change-entry{position:relative;display:grid;grid-template-columns:6.2rem minmax(0,1fr);gap:2rem;align-items:start}
+.change-date{display:flex;flex-direction:column;align-items:flex-end;padding:1.2rem 1rem 0 0;text-align:right}
+.change-date time{font:700 .78rem var(--display);color:var(--blue);white-space:nowrap}
+.change-date span{margin-top:.3rem;font-size:.72rem;color:var(--muted)}
+.change-card{position:relative;padding:1.5rem 1.65rem;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.change-card::before{content:"";position:absolute;left:-2.46rem;top:1.35rem;width:10px;height:10px;background:var(--coral);border:3px solid var(--paper);border-radius:50%;box-shadow:0 0 0 1px var(--coral)}
+.change-card-head{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.change-type{font:700 .68rem var(--display);letter-spacing:.12em;color:var(--blue)}
+.change-dot{width:8px;height:8px;border-radius:50%;background:var(--coral)}
+.change-card h3{font-size:1.35rem;margin:.8rem 0 .6rem}
+.change-card p{font-size:.96rem;color:var(--muted)}
+.change-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.1rem}
+.change-tags span{padding:.22rem .65rem;border:1px solid #C3BDB2;border-radius:99px;font-size:.75rem;color:var(--muted)}
+
+/* Cards do Sobre mim como links, com hovers */
+a.more-card{text-decoration:none;color:var(--paper);cursor:pointer}
+a.more-card:focus-visible{outline:3px solid var(--coral);outline-offset:3px}
+.more-card .corner{position:absolute;top:1.4rem;right:1.6rem;font-size:1.4rem;line-height:1;color:var(--coral);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.more-cta{display:inline-flex;align-items:center;gap:.4rem;margin-top:1rem;font:700 .85rem var(--display);letter-spacing:.04em;color:var(--coral)}
+.more-cta i{font-style:normal;display:inline-block;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.more-music .more-cta{position:relative;z-index:1}
+html.js a.more-card.reveal.in,a.more-card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease,opacity .6s}
+html.js a.more-card.reveal.in:hover,a.more-card:hover{transform:translateY(-6px);box-shadow:0 18px 36px rgba(34,35,38,.28)}
+a.more-card:hover .corner{transform:translate(4px,-4px)}
+a.more-card:hover .more-cta i{transform:translateX(5px)}
+.vinyl{transition:box-shadow .4s ease,bottom .7s cubic-bezier(.2,.8,.2,1)}
+.more-music:hover .vinyl,.more-music:focus-visible .vinyl{bottom:-4.75rem}
+@media(hover:none){.vinyl{bottom:-4.75rem}}
+.more-music:hover .vinyl{box-shadow:0 0 0 1.2rem #1d1e22,0 0 0 2.4rem #191a1e,0 0 60px rgba(255,126,95,.35)}
+.book{transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s ease;transform-origin:bottom left}
+.more-book:hover .book{transform:translate(-.4rem,-1.1rem) rotate(-3deg);box-shadow:-14px 16px 34px rgba(0,0,0,.55)}
+.rings i{transition:margin .45s cubic-bezier(.2,.7,.2,1),border-color .3s}
+.avatar{transition:transform .45s cubic-bezier(.2,.7,.2,1)}
+.more-connect:hover .rings i{margin:0 .35rem;border-color:var(--coral)}
+.more-connect:hover .avatar{transform:scale(1.12) rotate(-6deg)}
+
+/* Capa do livro como fundo e capa da faixa no centro do disco */
+.book{padding:0;overflow:hidden;background:linear-gradient(135deg,#1a1a1f,#2a1517 55%,#b92f2f)}
+.book img{display:block;width:100%;height:100%;object-fit:cover;object-position:top center}
+.book:not(.no-cover) b,.book:not(.no-cover) span{display:none}
+.book.no-cover{padding:1.1rem}
+.vinyl-label{position:absolute;inset:0;z-index:1;border-radius:50%;background:var(--coral) center/cover no-repeat}
+.vinyl-label::after{content:"";position:absolute;left:50%;top:50%;width:11%;height:11%;margin:-5.5% 0 0 -5.5%;border-radius:50%;background:#15161a;box-shadow:0 0 0 2px rgba(255,255,255,.22),0 0 0 .35rem rgba(21,22,26,.55)}
+.vinyl::after{z-index:2;inset:0;border:0;box-shadow:inset 0 0 0 2px rgba(0,0,0,.35);background:repeating-radial-gradient(circle,rgba(0,0,0,0) 0 5px,rgba(0,0,0,.14) 5px 6px),radial-gradient(circle at 30% 25%,rgba(255,255,255,.14),rgba(255,255,255,0) 45%)}
+html.js .vinyl{animation:none;will-change:transform}
+
+/* Conexões: bolinhas com o rosto de cada pessoa surgem no hover */
+.bubbles i{position:absolute;left:var(--x);top:var(--y);width:var(--s);height:var(--s);display:grid;place-items:center;overflow:hidden;border-radius:50%;background:var(--coral);color:var(--dark);border:2px solid var(--paper);font:700 calc(var(--s)*.36) var(--display);font-style:normal;letter-spacing:-.03em;opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2);transition:opacity .25s ease,transform .25s ease;pointer-events:none}
+.bubbles i:nth-child(3n+2){background:var(--blue);color:var(--paper)}
+.bubbles i:nth-child(3n){background:#5b5e6a;color:var(--paper)}
+.bubbles i img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+a.more-connect:hover .bubbles i,a.more-connect:focus-visible .bubbles i{opacity:1;transform:none;transition:opacity .5s ease var(--d),transform .6s cubic-bezier(.2,.9,.3,1.25) var(--d)}
+@media(hover:none){.bubbles i{opacity:1;transform:none}}
+
+/* Disco maior e livro com proporção de capa; o livro sobe mais no hover para mostrar o resto da capa */
+.vinyl{width:20rem;height:20rem;margin-left:-10rem;bottom:-10rem}
+.more-music:hover .vinyl,.more-music:focus-visible .vinyl{bottom:-8rem}
+@media(hover:none){.vinyl{bottom:-8rem}}
+.book{top:6.5rem;bottom:auto;left:2.25rem;right:-1.5rem;width:auto;aspect-ratio:2/3;border-radius:8px 0 0 0}
+.more-book:hover .book,.more-book:focus-visible .book{transform:translate(-.3rem,-1rem) rotate(-3deg)}
+@media(hover:none){.book{transform:translateY(-1.5rem)}}
+
+.avatar{overflow:hidden}
+.avatar img{position:absolute;inset:0;width:100%;height:100%;border-radius:50%;object-fit:cover;object-position:50% 20%}

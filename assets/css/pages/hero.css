@@ -1,0 +1,66 @@
+/* Hero, retrato e atalhos (bento) da página inicial */
+/* Hero Reorganizado */
+.hero{background:var(--dark);color:var(--paper);padding:4rem 0 3.5rem;display:flex;align-items:center}
+.hero h1{font-weight:700;font-size:clamp(3.2rem,7.5vw,5.5rem);line-height:.95;letter-spacing:-.045em;margin-bottom:1.5rem}
+.hero h1 span{display:block}
+.hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--paper)}
+.hero h1 b{color:var(--coral)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,clamp(18rem,26vw,30rem));gap:3.5rem;align-items:center}
+.photo{position:relative;margin:0 1.1rem 1.1rem 0}
+.photo::before{content:"";position:absolute;inset:1.1rem -1.1rem -1.1rem 1.1rem;background:var(--coral);border-radius:999px 999px 14px 14px}
+.photo img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 25%;border-radius:999px 999px 14px 14px;border:3px solid var(--paper);background:var(--dark2)}
+.lead{max-width:36rem;font-size:1.2rem;color:#D2D2D2;margin-bottom:1.75rem}
+.lead strong{color:var(--white);font-weight:500}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+@media(min-width:1500px){
+  .hero h1{font-size:clamp(5.5rem,5.4vw,7.5rem)}
+  .lead{max-width:44rem;font-size:1.35rem}
+  .hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,clamp(20rem,24vw,28rem));gap:4.5rem}
+}
+
+/* Retrato: foto real dentro do arco, com a forma coral deslocada atrás (.photo::before) */
+.photo{isolation:isolate;justify-self:end;width:min(100%,calc((100svh - 11rem)*.8))}
+.portrait-img{position:relative;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 22%;border:3px solid var(--paper);border-radius:999px 999px 14px 14px;background:var(--dark2)}
+/* Atalhos em bento 2x2: larguras que brincam com o comprimento dos títulos (4/8 em cima, 7/5 embaixo) */
+.jump{list-style:none;display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:.3rem;align-content:start;container-type:inline-size}
+.jump li{display:flex}
+.jump li:nth-child(1){grid-column:span 4}.jump li:nth-child(2){grid-column:span 8}
+.jump li:nth-child(3){grid-column:span 7}.jump li:nth-child(4){grid-column:span 5}
+.jt{flex:1;display:flex;flex-direction:column;min-height:7.4rem;padding:.9rem .95rem;border:1px solid transparent;border-radius:16px;color:var(--paper);text-decoration:none;transition:transform .2s,background-color .2s,border-color .2s}
+.jt .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto;padding-bottom:.7rem}
+.jt .n{font:700 .78rem var(--display);color:var(--coral)}
+.jt .arr{font-weight:700;transition:transform .2s}
+.jt b{display:block;font:700 1.15rem/1.1 var(--display);letter-spacing:-.02em}
+.jt b{font-size:clamp(.85rem,5.2cqw,1.3rem)}
+.jt .open{display:none}
+.jt small{display:block;margin-top:.3rem;font-size:.8rem;line-height:1.3;opacity:.82}
+.jt:hover{transform:translateY(-3px)}.jt:hover .arr{transform:translateX(4px)}
+.jt:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.jump li:nth-child(1) .jt{background:var(--dark2)}
+.jump li:nth-child(1) .jt:hover{border-color:var(--coral)}
+.jump li:nth-child(2) .jt{background:var(--blue)}
+.jump li:nth-child(2) .jt .n{color:var(--paper)}
+.jump li:nth-child(2) .jt:hover{background:#5870E6}
+.jump li:nth-child(2) .jt:focus-visible{outline-color:var(--dark)}
+.jump li:nth-child(3) .jt{background:#DDE3FF;border-color:#B5C0F2;color:var(--dark)}
+.jump li:nth-child(3) .jt .n,.jump li:nth-child(3) .jt .arr{color:var(--blue)}
+.jump li:nth-child(3) .jt small{opacity:1;color:#3E4466}
+.jump li:nth-child(3) .jt:hover{background:#E9EDFF;border-color:var(--blue)}
+.jump li:nth-child(4) .jt{background:#343B55;border-color:#505A7E}
+.jump li:nth-child(4) .jt:hover{background:#3C4667;border-color:#7C8CE6}
+/* Espaço curto: some a descrição e a divisão fica 5/7 e 6/6 para os títulos caberem */
+@container (max-width:300px){
+  .jump li:nth-child(1){grid-column:span 5}.jump li:nth-child(2){grid-column:span 7}
+  .jump li:nth-child(3),.jump li:nth-child(4){grid-column:span 6}
+  .jt{min-height:4.8rem;padding:.7rem}.jt small{display:none}
+}
+/* Celular: formato do bento original (número, título e "Abrir →"), sem descrição */
+@media(max-width:760px){
+  .jump{gap:.4rem}
+  .jt{min-height:7.6rem;padding:1rem}
+  .jt small,.jt .arr{display:none}
+  .jt .top{padding-bottom:.9rem}
+  .jt .open{display:block;margin-top:.55rem;font-weight:700;font-size:.85rem;color:var(--coral)}
+  .jump li:nth-child(2) .jt .open{color:var(--paper)}
+  .jump li:nth-child(3) .jt .open{color:var(--blue)}
+}
